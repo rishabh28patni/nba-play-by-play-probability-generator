@@ -94,7 +94,7 @@ class PlayByPlayNBAApiDataset():
                                                          "touch_time", "closest_def_dist", "value", "made", 
                                                          "margin", "assisted", "assist_player" ,"shottype", "and1"]]
         
-        defender_distance_data["time"] = defender_distance_data["time"].apply(lambda x: time.strftime("%M:%S", time.gmtime(x)))
+        defender_distance_data["time"] = defender_distance_data["time"].apply(lambda x: int(time.strftime("%M", time.gmtime(x))))
 
         data = data.merge(defender_distance_data, on = ["gameid", "eventnum","x", "y"], how='left')
         data = data[["PLAYER_NAME", "TEAM_NAME", "PERIOD", "time", "SHOT_ZONE_AREA", "SHOT_DISTANCE","opponent", "x", "y", "dribble_range", "touch_time", "closest_def_dist", "value", "made", "margin", "shottype"]]
