@@ -1,7 +1,5 @@
 # Orientation Tracking
 
-## Introduction
-This project looks to  
 
 ## Environment
 
